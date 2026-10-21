@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}{{ book.title }}{% endblock %}
+{% block content %}
+  <a class="btn btn-sm btn-outline-secondary mb-4" href="{% url 'books' %}"><i class="bi bi-arrow-left"></i> Kitoblarga qaytish</a>
+  <section class="row g-5">
+    <div class="col-md-4 col-lg-3">{% include "_cover.html" with book=book extra="tilt big" %}</div>
+    <div class="col-md-8 col-lg-9">
+      <span class="badge text-bg-warning">{{ book.genre.name }}</span>
+      <h1 class="display-5 fw-bold mt-2">{{ book.title }}</h1>
+      <p class="text-body-secondary fs-5">{{ book.author }}</p>
+      <div class="d-flex gap-4 my-3">
+        <div><b class="fs-4"><i class="bi bi-star-fill text-warning"></i> {{ book.rating }}</b><br><small class="text-body-secondary">reyting</small></div>
+        <div><b class="fs-4">{{ book.book_pages.count }}</b><br><small class="text-body-secondary">sahifa</small></div>
+        <div><b class="fs-4">{{ book.year|default:"—" }}</b><br><small class="text-body-secondary">yil</small></div>
+      </div>
+      <p class="lead lh-lg">{{ book.description }}</p>
+      {% if percent %}
+      <div class="progress my-2" style="max-width:340px"><div class="progress-bar" style="width:{{ percent }}%"></div></div>
+      <small class="text-body-secondary">{{ percent }}% o‘qildi</small>
+      {% endif %}
+      <div><a class="btn btn-primary btn-lg mt-3" href="{% url 'read' book.pk %}"><i class="bi bi-book"></i> {% if percent %}Davom etish{% else %}O‘qishni boshlash{% endif %}</a></div>
+    </div>
+  </section>
+  <h2 class="h4 my-4">Boshqa kitoblar</h2>
+  <div class="row g-4">{% for b in similar %}{% include "_card.html" %}{% endfor %}</div>
+{% endblock %}

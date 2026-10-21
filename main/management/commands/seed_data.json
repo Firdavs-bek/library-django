@@ -1,0 +1,138 @@
+{
+ "genres": {
+  "roman": [
+   "Roman",
+   "bi-heart"
+  ],
+  "tarix": [
+   "Tarix",
+   "bi-bank"
+  ],
+  "biznes": [
+   "Biznes",
+   "bi-graph-up-arrow"
+  ],
+  "psixologiya": [
+   "Psixologiya",
+   "bi-lightbulb"
+  ],
+  "fantastika": [
+   "Fantastika",
+   "bi-stars"
+  ],
+  "ilm": [
+   "Ilm-fan",
+   "bi-rocket-takeoff"
+  ]
+ },
+ "books": [
+  {
+   "id": 1,
+   "title": "Chiroqli kutubxona",
+   "author": "Dilfuza Karimova",
+   "genre": "fantastika",
+   "year": 2024,
+   "pages": 12,
+   "rating": 4.9,
+   "color": 4,
+   "desc": "Shahar chetidagi eski kutubxonada har kech yonadigan sehrli chiroq va uni faqat bolalar ko‘radigan sir.",
+   "content": [
+    "Shahar chetidagi eski kutubxonada har kech bitta chiroq yonar edi. Uni faqat bolalar ko‘rishardi, kattalar esa shunchaki o‘tib ketaverardi.",
+    "O‘n yoshli Madina bir kuni chiroq ortidagi yashirin eshikni topdi. Eshik orqasida cheksiz javonlar va shivirlayotgan kitoblar turardi.",
+    "Har bir kitob o‘z ovozida chaqirardi: «Meni och, men senga yangi bir olamni ko‘rsataman.» Madina ehtiyotkorlik bilan eng yupqasini tanladi.",
+    "Sahifalar orasidan iliq shamol esdi, va u o‘zini bahor bog‘ida ko‘rdi. Qushlar unga tanish ertaklarni kuylashardi.",
+    "Ertalab u kutubxonachi buvining yonida uyg‘ondi. Buvi jilmaydi: «Chiroq seni kutgan edi, qizim. Ertaga yana kel.»"
+   ]
+  },
+  {
+   "id": 2,
+   "title": "Minora ustasi",
+   "author": "Jasur Ergashev",
+   "genre": "tarix",
+   "year": 2023,
+   "pages": 12,
+   "rating": 4.7,
+   "color": 2,
+   "desc": "Qadimiy shahar minorasini qurayotgan yosh ustaning sabri va ustozidan olgan eng muhim saboq.",
+   "content": [
+    "Qadimgi Buxoroda yosh quruvchi Anvar ustozi bilan baland minora qurardi. Har kuni ertalab ular birinchi g‘ishtni birga qo‘yishardi.",
+    "Anvar shoshardi. U minora tezroq tugashini, shahar odamlari unga qoyil qolishini xohlardi.",
+    "Ustoz esa har g‘ishtni uzoq tekshirardi. «Poydevor ko‘rinmaydi, lekin minorani aynan u ushlab turadi», derdi u sekin.",
+    "Yillar o‘tdi. Katta zilzila shaharni larzaga soldi. Ko‘p binolar qulab tushdi, ammo minora joyida turardi.",
+    "Anvar o‘shanda tushundi: ishonchli ish shoshilmaydi. U keyinchalik o‘zi ustoz bo‘lib, shogirdlariga shu so‘zlarni takrorladi."
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Har kuni bir sahifa",
+   "author": "Nilufar Rahimova",
+   "genre": "psixologiya",
+   "year": 2025,
+   "pages": 12,
+   "rating": 4.8,
+   "color": 3,
+   "desc": "Kichik odatlar qanday qilib katta o‘zgarishga aylanishi haqida iliq va ilhomlantiruvchi hikoya.",
+   "content": [
+    "Sevara hech qachon kitob o‘qishga vaqt topolmasdim, deb o‘ylardi. Ish, uy, telefon — kun shundoq ham to‘lib ketardi.",
+    "Bir kuni u o‘ziga kichik va’da berdi: har kuni faqat bitta sahifa. Ko‘proq emas, kamroq ham emas.",
+    "Dastlab bu kulgili tuyulardi. Lekin u sahifani choy qaynayotgan paytda o‘qiy boshladi, va odat o‘z-o‘zidan yopishdi.",
+    "Bir oydan keyin u bitta sahifada to‘xtay olmasligini sezdi. Ikki oy o‘tib, birinchi kitobini tugatdi.",
+    "Sevara tushundi: katta o‘zgarish baland ovozli qaror emas, har kuni takrorlanadigan kichik qadamdir."
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Anor bozori",
+   "author": "Bobur Aliyev",
+   "genre": "biznes",
+   "year": 2022,
+   "pages": 12,
+   "rating": 4.5,
+   "color": 1,
+   "desc": "O‘n uch yoshli bolaning birinchi savdosi: halollik, hisob-kitob va mijozning ishonchi haqida.",
+   "content": [
+    "O‘n uch yoshli Karim bozorda bobosining anorlarini sotardi. Birinchi kuni u hech narsa sota olmadi.",
+    "Yonidagi savdogar maslahat berdi: «Narxni tushirma. Mijozga anorning shirinligini o‘zi tatib ko‘rsat.»",
+    "Karim bitta anorni ochib, ko‘pchilikka bir dona donadan tarqatdi. Odamlar shirinlikni sezib, qaytib kela boshladi.",
+    "Kechqurun u hisobni yozib qo‘ydi: nechta sotildi, nechtasi qoldi, nimaga ko‘proq qiziqishdi.",
+    "Bobosi daftarga qarab jilmaydi: «Pul topish — faqat sotish emas, kuzatish va ishonch qozonish ham ekan.»"
+   ]
+  },
+  {
+   "id": 5,
+   "title": "Yulduz izlagan bola",
+   "author": "Malika Sodiqova",
+   "genre": "ilm",
+   "year": 2024,
+   "pages": 12,
+   "rating": 4.6,
+   "color": 4,
+   "desc": "Qishloq bolasi tungi osmonni kuzatib, o‘z ilk teleskopini yasashga qaror qiladi.",
+   "content": [
+    "Qishloqda yashovchi Otabek har kech tomga chiqib, osmondagi yulduzlarni sanardi. Ular unga juda uzoq va sirli tuyulardi.",
+    "U kitobdan o‘qidi: linzalar yorug‘likni to‘playdi. Shunda eski ko‘zoynak va karton nayning yordamida teleskop yasashga kirishdi.",
+    "Birinchi urinish bulutdek xira chiqdi. Ikkinchisida tasvir teskari bo‘ldi. Otabek esa har safar nima xato ketganini yozib bordi.",
+    "Uchinchi kechada Oy yuzidagi kraterlar ko‘rindi. U nafasini ushlab, bir zum jim qoldi.",
+    "Shu kecha u fan nima ekanini angladi: savol berish, sinab ko‘rish va xatolardan qo‘rqmaslik."
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Bahor xati",
+   "author": "Zarina Yo‘ldosheva",
+   "genre": "roman",
+   "year": 2021,
+   "pages": 12,
+   "rating": 4.8,
+   "color": 1,
+   "desc": "Eski kitob orasidan chiqqan nomsiz xat ikki notanish yurakni bir-biriga yaqinlashtiradi.",
+   "content": [
+    "Laylo antikvar do‘konidan eski she’rlar to‘plamini sotib oldi. Uyga kelib ochsa, orasidan sarg‘aygan xat tushdi.",
+    "Xatda faqat bir necha satr bor edi: «Agar buni o‘qiyotgan bo‘lsang, bahorgacha kutganing uchun rahmat.»",
+    "Laylo kimligini bilmay turib javob yozdi va xatni kitobga qo‘yib, do‘konga qaytardi. Ertasi kuni javob kelmadi.",
+    "Haftadan keyin kitob orasida yangi xat paydo bo‘ldi. Yozuvlar mehribon va hazilkash edi.",
+    "Bahor kelganda ular do‘kon eshigi oldida uchrashdi. Ikkalasi ham qo‘lida o‘sha kitobni ushlab turardi."
+   ]
+  }
+ ]
+}

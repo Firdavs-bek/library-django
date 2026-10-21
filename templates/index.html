@@ -1,0 +1,35 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Bosh sahifa{% endblock %}
+{% block content %}
+
+  <!-- 1. Statistika (endi tepada) -->
+  <div class="row g-3 mb-4">
+    <div class="col-6 col-md-4 reveal"><div class="card stat p-3"><b class="display-6" data-count="{{ book_count }}">0</b><span class="text-body-secondary small">kitob</span></div></div>
+    <div class="col-6 col-md-4 reveal"><div class="card stat p-3"><b class="display-6" data-count="{{ genre_count }}">0</b><span class="text-body-secondary small">janr</span></div></div>
+    <div class="col-12 col-md-4 reveal"><div class="card stat p-3"><b class="display-6">Bepul</b><span class="text-body-secondary small">hammasi ochiq</span></div></div>
+  </div>
+
+  <!-- 2. Hero: eng yuqori baholangan kitob (endi statistikaning ostida) -->
+  {% if featured %}
+  <section class="hero p-4 p-md-5 mb-4 text-white">
+    <div class="row align-items-center g-4">
+      <div class="col-5 col-md-3"><a href="{% url 'book' featured.pk %}">{% include "_cover.html" with book=featured extra="tilt" %}</a></div>
+      <div class="col">
+        <span class="badge text-bg-warning mb-2">Tavsiya etamiz</span>
+        <h1 class="display-6 fw-bold">{{ featured.title }}</h1>
+        <p class="opacity-75">{{ featured.author }} · {{ featured.description }}</p>
+        <a class="btn btn-light btn-lg" href="{% url 'read' featured.pk %}">O‘qishni boshlash <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="col-md-3 d-none d-md-block"><img class="hero-art float" src="{% static 'img/books.svg' %}" alt=""></div>
+    </div>
+  </section>
+  {% else %}
+  <div class="empty-box">Hali kitob yo‘q. Admin paneldan kitob qo‘shing: <a href="/admin/">/admin/</a></div>
+  {% endif %}
+
+  <div class="d-flex justify-content-between align-items-end my-4"><h2 class="h4 mb-0">Yangi qo‘shilganlar</h2><a href="{% url 'books' %}">Barchasi</a></div>
+  <div class="row g-4">{% for b in new %}{% include "_card.html" %}{% endfor %}</div>
+
+  <h2 class="h4 my-4">Eng yuqori baholangan</h2>
+  <div class="row g-4">{% for b in top %}{% include "_card.html" %}{% endfor %}</div>
+{% endblock %}

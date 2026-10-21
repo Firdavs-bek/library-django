@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Kitoblar{% endblock %}
+{% block content %}
+  <h1 class="h3 mb-3">Kitoblar</h1>
+  <input class="form-control mb-3" id="search" value="{{ q }}" placeholder="Kitob yoki muallif qidiring...">
+  <div class="d-flex flex-wrap gap-2 mb-4" id="chips">
+    <button class="btn btn-sm rounded-pill btn-primary" data-filter="all">Barchasi</button>
+    {% for g in genres %}<button class="btn btn-sm rounded-pill btn-outline-primary" data-filter="{{ g.slug }}">{{ g.name }}</button>{% endfor %}
+  </div>
+  <div class="row g-4" id="list">{% for b in books %}{% include "_card.html" %}{% endfor %}</div>
+  <div class="empty-box" id="none" hidden>Kitob topilmadi.</div>
+{% endblock %}

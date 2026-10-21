@@ -1,0 +1,3 @@
+<div class="cover {% if not book.cover_url %}cv{{ book.cover_color }}{% endif %} {{ extra }}"{% if book.cover_url %} style="background-image:url('{{ book.cover_url.url }}')"{% endif %}>
+  {% if not book.cover_url %}<i class="bi {{ book.genre.icon }} cover-icon"></i><small>{{ book.author }}</small><strong>{{ book.title }}</strong>{% endif %}
+</div>

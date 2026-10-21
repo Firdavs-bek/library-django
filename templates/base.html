@@ -1,0 +1,47 @@
+{% load static %}<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Library{% endblock %} — Library</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/icons/bootstrap-icons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+{% block body %}
+  {% block top %}{% endblock %}
+  <!-- ===== Yuqori menyu (barcha sahifalarda bir xil) ===== -->
+  <nav class="navbar navbar-expand-md sticky-top glass">
+    <div class="container-fluid px-4">     <!-- shu qator: "container" o‘rniga "container-fluid px-4" -->
+      <a class="navbar-brand fw-bold" href="{% url 'index' %}"><i class="bi bi-book-half text-warning"></i> Library</a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name == 'index' %}active fw-semibold{% endif %}" href="{% url 'index' %}"><i class="bi bi-house"></i> Bosh sahifa</a></li>
+          <li class="nav-item"><a class="nav-link {% if request.resolver_match.url_name in 'books book read' %}active fw-semibold{% endif %}" href="{% url 'books' %}"><i class="bi bi-grid"></i> Kitoblar</a></li>
+        </ul>
+        <form action="{% url 'books' %}" class="d-flex me-2"><input class="form-control form-control-sm" name="q" placeholder="Kitob yoki muallif..."></form>
+        <button class="btn btn-sm btn-outline-secondary" id="theme" aria-label="Rejim"><i class="bi bi-moon-stars"></i></button>
+        {% if user.is_authenticated %}
+        <div class="dropdown ms-2">
+          <button class="btn btn-sm btn-primary dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i> {{ user.first_name|default:user.username }}</button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            {% if user.is_staff %}<li><a class="dropdown-item" href="/admin/"><i class="bi bi-gear"></i> Admin panel</a></li>{% endif %}
+            <li><a class="dropdown-item" href="{% url 'logout' %}"><i class="bi bi-box-arrow-right"></i> Chiqish</a></li>
+          </ul>
+        </div>
+        {% else %}
+        <a class="btn btn-sm btn-primary ms-2" href="{% url 'login' %}"><i class="bi bi-person"></i> Kirish</a>
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4 page-in">{% block content %}{% endblock %}</main>
+  <footer class="text-center text-body-secondary small py-4">© Library — o‘qing va ilhomlaning.</footer>
+{% endblock %}
+  <script src="{% static 'vendor/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'js/effects.js' %}"></script>
+</body>
+</html>

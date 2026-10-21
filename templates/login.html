@@ -1,0 +1,48 @@
+{% extends "base.html" %}{% load static %}
+{% block title %}Kirish{% endblock %}
+{% block body %}
+<div class="row g-0 min-vh-100">
+  <!-- Chap tomon: rasm va shior -->
+  <section class="col-lg-6 auth-art d-flex flex-column justify-content-between p-5 text-white">
+    <a class="fw-bold fs-3 text-white text-decoration-none" href="{% url 'index' %}"><i class="bi bi-book-half text-warning"></i> Library</a>
+    <div class="text-center">
+      <img class="hero-art float" src="{% static 'img/books.svg' %}" alt="">
+      <h2 class="display-5 fw-bold mt-3">Har kuni bir sahifa, har kuni yangi fikr.</h2>
+      <p class="opacity-75">Kitoblarni o‘qing va qayerda to‘xtaganingizni hech qachon yo‘qotmang.</p>
+    </div>
+    <span></span>
+  </section>
+  <!-- O‘ng tomon: formalar -->
+  <section class="col-lg-6 d-flex align-items-center justify-content-center p-4">
+    <div class="w-100 page-in" style="max-width:400px">
+      <ul class="nav nav-pills nav-fill mb-4">
+        <li class="nav-item"><button class="nav-link {% if tab == 'login' %}active{% endif %}" data-bs-toggle="pill" data-bs-target="#loginTab" type="button">Kirish</button></li>
+        <li class="nav-item"><button class="nav-link {% if tab == 'register' %}active{% endif %}" data-bs-toggle="pill" data-bs-target="#registerTab" type="button">Ro‘yxatdan o‘tish</button></li>
+      </ul>
+      {% if error %}<div class="alert alert-danger py-2">{{ error }}</div>{% endif %}
+      <div class="tab-content">
+        <div class="tab-pane fade {% if tab == 'login' %}show active{% endif %}" id="loginTab">
+          <h1 class="h2 fw-bold">Kirish</h1>
+          <form method="post" class="vstack gap-3 mt-3">{% csrf_token %}
+            <input type="hidden" name="action" value="login">
+            <div class="form-floating"><input class="form-control" id="le" name="email" type="email" placeholder="Email" required><label for="le">Email</label></div>
+            <div class="form-floating"><input class="form-control" id="lp" name="password" type="password" placeholder="Parol" required><label for="lp">Parol</label></div>
+            <button class="btn btn-primary btn-lg">Kirish</button>
+          </form>
+        </div>
+        <div class="tab-pane fade {% if tab == 'register' %}show active{% endif %}" id="registerTab">
+          <h1 class="h2 fw-bold">Hisob yaratish</h1>
+          <form method="post" class="vstack gap-3 mt-3">{% csrf_token %}
+            <input type="hidden" name="action" value="register">
+            <div class="form-floating"><input class="form-control" id="rn" name="name" placeholder="Ism" required><label for="rn">Ism</label></div>
+            <div class="form-floating"><input class="form-control" id="re" name="email" type="email" placeholder="Email" required><label for="re">Email</label></div>
+            <div class="form-floating"><input class="form-control" id="rp" name="password" type="password" placeholder="Parol" required minlength="6"><label for="rp">Parol (kamida 6 belgi)</label></div>
+            <button class="btn btn-primary btn-lg">Hisob yaratish</button>
+          </form>
+        </div>
+      </div>
+      <p class="text-center mt-4 mb-0"><a href="{% url 'index' %}">← Saytga qaytish</a></p>
+    </div>
+  </section>
+</div>
+{% endblock %}
